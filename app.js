@@ -108,52 +108,11 @@ app.post("/", function (req, res) {
   res.redirect("/work")
 });
 
-app.listen(8000, function () {
-  console.log("server started on port 8000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function () {
+  console.log("server has started successfully.");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var currentDay = today.getDay();
-// var day = "";
-//
-// switch (currentDay) {
-//   case 0:
-//     day = "sunday";
-//     break;
-//     case 1:
-//       day = "monday";
-//       break;
-//       case 2:
-//         day = "tuesday";
-//         break;
-//         case 3:
-//           day = "wednesday";
-//           break;
-//           case 4:
-//             day = "Thursday";
-//             break;
-//             case 5:
-//               day = "Friday";
-//               break;
-//               case 6:
-//                 day = "Saturday";
-//                 break;
-//
-//   default:
-//     console.log("Error: current day is equal to:" + currentDay);
-// }
