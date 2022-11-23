@@ -1,0 +1,59 @@
+TODO-LIST with EJS AND MONGODB
+
+EJS - It is used to embed dynamic content to the page and is used to embed normal JavaScript.
+
+eg:- you can create a todolist web app without loading the entire page
+
+steps:
+install EJS - npm i ejs
+to use ejs on express - app.set('view engine', 'ejs');
+using if ejs in index.ejs - <% if (user) { %>
+                              <h2><%= user.name %></h2>
+                                <% } %>
+
+
+LAYOUTS:
+--------
+<%- include('header'); -%>
+<h1>
+  Title
+</h1>
+<p>
+  My page
+</p>
+<%- include('footer'); -%>
+
+
+
+Working with external files, with the function call:
+----------------------------------------------------
+step 1: Create a function inside a new file:
+
+function getDate(){
+return "hello world";
+}
+
+step 2: Export the function:
+
+module.exports.getDate = getDate;
+
+step 3: Import that file from root(home) js file:
+
+const date = require(__dirname + "/date.js");
+
+step 4: call the function:
+
+let day = date.getDay();
+
+SHORT CODES:
+exports.getDay - exports also work without the module
+
+exports.getDay = function() {
+  return "hello world";
+};
+
+
+
+
+ name="checkbox" value="<%=item._id%>" onchange="this.form.submit()"
+            <p> <%= item.name %> </p>
