@@ -1,0 +1,59 @@
+https://morning-tor-62550.herokuapp.com/
+
+
+Step 1: Track your codebase in a Git repository
+----------------------------------------------
+git init 
+git add .
+git commit -m "Initial commit"
+
+step 2: Add a Heroku Git remote
+-------------------------------
+heroku login
+heroku create
+
+step 3: Add Procfile
+--------------------
+touch Procfile
+open Procfile and add:-    web: node app.js
+
+step 4: Listen on the correct port
+----------------------------------
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function () {
+  console.log("server has started successfully.");
+});
+
+step 5: Use a database or object storage instead of writing to your local filesystem
+----------------------------------------------------------------
+mongoose.connect("mongodb+srv://shibil:shibil123@cluster0.u5aebd5.mongodb.net/todolistDB", { useNewUrlParser: true });
+
+step 6: Complete language-specific setup
+----------------------------------------
+a) Specify the version of node
+	"engines": {
+    "node": "14.x"
+  },
+
+b) Prevent build artifacts from going into revision control by creating a .gitignore file
+	.gitignore : 
+
+		/node_modules
+		npm-debug.log
+		.DS_Store
+		/*.env
+
+c) update git:
+
+git add .
+git commit -m "Added a Procfile."
+
+step 7: Deploy your app
+-----------------------
+git push heroku master
+
+YOUR WEB APP - https://morning-tor-62550.herokuapp.com/

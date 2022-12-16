@@ -28,20 +28,24 @@ LAYOUTS:
 Working with external files, with the function call:
 ----------------------------------------------------
 step 1: Create a function inside a new file:
+--------------------------------------
 
 function getDate(){
 return "hello world";
 }
 
 step 2: Export the function:
+-----------------------------
 
 module.exports.getDate = getDate;
 
 step 3: Import that file from root(home) js file:
+-------------------------------------------------
 
 const date = require(__dirname + "/date.js");
 
 step 4: call the function:
+--------------------------
 
 let day = date.getDay();
 
